@@ -44,6 +44,19 @@ export function ProductDetailsPage({
     return product.options.length > 0 ? baseOptions : { ...selectedOptions, volume: selectedOptions.volume ?? "50 ml" };
   }, [product, selectedOptions]);
 
+  const notes =
+    product?.id === "santal-parchment"
+      ? {
+          top: ["Sicilian Bergamot", "Pink Pepper"],
+          heart: ["Egyptian Jasmine Sambac", "Papyrus"],
+          base: ["West Indian Sandalwood", "Cardamom", "Amber"],
+        }
+      : {
+          top: ["Bergamot", "Pink Pepper"],
+          heart: ["Jasmine", "Cedar"],
+          base: ["Sandalwood", "Amber"],
+        };
+
   if (productQuery.isLoading) {
     return <p className="text-sm text-zinc-600">Loading product...</p>;
   }
@@ -95,10 +108,10 @@ export function ProductDetailsPage({
             />
 
             <div className="flex items-center gap-4 pt-1">
-              <div className="inline-flex items-center rounded-full border border-[#d8cfc3] bg-[#f7f2ed]">
+              <div className="inline-flex items-center overflow-hidden rounded-[12px] border border-[#d8cfc3] bg-[#f7f2ed]">
                 <button
                   type="button"
-                  className="flex h-12 w-12 items-center justify-center text-[28px] leading-none text-[#171310]"
+                  className="flex h-[52px] w-[32px] items-center justify-center text-[28px] leading-none text-[#171310]"
                   aria-label="Decrease quantity"
                   onClick={() =>
                     setSelectedOptions((current) => ({
@@ -109,12 +122,12 @@ export function ProductDetailsPage({
                 >
                   −
                 </button>
-                <span className="min-w-[44px] text-center text-[15px] font-medium text-[#171310]">
+                <span className="min-w-[48px] text-center text-[18px] font-medium leading-none tracking-[-0.04em] text-[#171310]">
                   {selectedOptions.quantity ?? "1"}
                 </span>
                 <button
                   type="button"
-                  className="flex h-12 w-12 items-center justify-center text-[28px] leading-none text-[#171310]"
+                  className="flex h-[52px] w-[32px] items-center justify-center text-[28px] leading-none text-[#171310]"
                   aria-label="Increase quantity"
                   onClick={() =>
                     setSelectedOptions((current) => ({
@@ -128,6 +141,34 @@ export function ProductDetailsPage({
               </div>
 
               <div className="flex-1">{actions?.({ product, selectedOptions: resolvedOptions })}</div>
+            </div>
+
+            <div className="pt-5">
+              <div className="space-y-3">
+                <h2 className="text-[13px] font-medium uppercase tracking-[0.24em] text-[#171310]">
+                  Scent Anatomy
+                </h2>
+                <p className="max-w-[34rem] text-[15px] leading-[1.7] text-[#5a514b]">{product.description}</p>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              {[
+                { label: "Top Notes", value: notes.top.join(", ") },
+                { label: "Heart Notes", value: notes.heart.join(", ") },
+                { label: "Base Notes", value: notes.base.join(", ") },
+              ].map((row) => (
+                <div key={row.label} className="border-t border-[#d8cfc3] py-3 first:border-t-0 first:pt-0">
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="w-[120px] shrink-0 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#171310]">
+                      {row.label}
+                    </span>
+                    <span className="flex-1 text-left text-[14px] leading-[1.8] font-normal text-[#5a514b]">
+                      {row.value}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -59,16 +59,13 @@ export function ProductOptions({
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-3 rounded-[12px] border border-[#d9d0c5] bg-[#f4efe9] px-3 py-3">
-        <div className="flex items-start gap-3">
-          <span className="mt-1 flex size-7 items-center justify-center rounded-full bg-[#171310] text-[12px] font-medium text-[#f9f3ed]">
-            N
-          </span>
+      <div className="flex items-center justify-between gap-3 rounded-[16px] border border-[#d9d0c5] bg-[#f4efe9] px-4 py-3">
+        <div className="flex items-start">
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-[#302d2a]">
+            <p className="text-[16px] font-medium leading-[1.3] tracking-[-0.02em] text-[#171310]">
               Complimentary Signature Gift Wrapping
             </p>
-            <p className="mt-1 text-[11px] text-[#6a615b]">
+            <p className="mt-1 text-[15px] leading-[1.5] text-[#5c514d]">
               Encased in linen paper box with custom wax seal stamp.
             </p>
           </div>
@@ -79,13 +76,13 @@ export function ProductOptions({
           aria-label="Toggle gift wrapping"
           aria-pressed={giftWrapEnabled}
           onClick={() => setGiftWrapEnabled((current) => !current)}
-          className={`relative inline-flex h-7 w-12 items-center rounded-full border transition-colors ${
-            giftWrapEnabled ? "border-[#8a7f71] bg-[#d8d2cb]" : "border-[#c8bfb5] bg-[#f0ece7]"
+          className={`relative inline-flex h-8 w-16 items-center rounded-full border transition-colors ${
+            giftWrapEnabled ? "border-[#c4b298] bg-[#d4c3a0]" : "border-[#d2c8bc] bg-[#f2eee9]"
           }`}
         >
           <span
-            className={`inline-block size-5 rounded-full bg-[#ffffff] shadow-[0_1px_4px_rgba(0,0,0,0.18)] transition-transform ${
-              giftWrapEnabled ? "translate-x-6" : "translate-x-1"
+            className={`inline-block size-6 rounded-full bg-[#fffefc] shadow-[0_1px_3px_rgba(0,0,0,0.3)] transition-transform ${
+              giftWrapEnabled ? "translate-x-8" : "translate-x-1"
             }`}
           />
         </button>
