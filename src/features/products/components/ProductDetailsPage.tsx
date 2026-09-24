@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useMemo, useState, type ReactNode } from "react";
+import { ProductCard } from "@/features/products/components/ProductCard";
 import { ProductDetails } from "@/features/products/components/ProductDetails";
 import { ProductImages } from "@/features/products/components/ProductImages";
 import { ProductOptions } from "@/features/products/components/ProductOptions";
 import { useProduct } from "@/features/products/hooks/useProduct";
+import { mockProducts } from "@/features/products/services/products.mock-data";
 import { productPaths } from "@/features/products/paths";
 import type { Product } from "@/features/products/types/product.types";
 
@@ -56,6 +58,14 @@ export function ProductDetailsPage({
           heart: ["Jasmine", "Cedar"],
           base: ["Sandalwood", "Amber"],
         };
+
+  const relatedProducts = product
+    ? ["fleur-de-lune", "noir-cocoon", "sol-dor", "rose-absolute", "atelier-oud"]
+        .filter((id) => id !== product.id)
+        .map((id) => mockProducts.find((item) => item.id === id))
+        .filter((item): item is Product => Boolean(item))
+        .slice(0, 4)
+    : [];
 
   if (productQuery.isLoading) {
     return <p className="text-sm text-zinc-600">Loading product...</p>;
@@ -170,6 +180,23 @@ export function ProductDetailsPage({
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-[1260px] px-4 pb-16 sm:px-6 md:px-10 lg:px-20">
+        <div className="pt-8">
+          <h2 className="text-center font-[family-name:var(--font-instrument-serif)] text-[42px] leading-[0.96] tracking-[-0.04em] text-[#171310]">
+            Olfactory Companions
+          </h2>
+          <p className="mt-3 text-center text-[10px] font-medium uppercase tracking-[0.2em] text-[#6a625c]">
+            Fragrances of synonymous sophistication
+          </p>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {relatedProducts.map((relatedProduct) => (
+              <ProductCard key={relatedProduct.id} product={relatedProduct} />
+            ))}
           </div>
         </div>
       </div>
