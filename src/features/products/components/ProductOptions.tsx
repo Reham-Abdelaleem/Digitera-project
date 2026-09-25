@@ -29,7 +29,7 @@ export function ProductOptions({
   return (
     <div className="space-y-5 pt-2">
       <div className="space-y-3">
-        <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-[#5d524d]">
+        <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-ink-muted">
           Select volume
         </p>
 
@@ -43,14 +43,14 @@ export function ProductOptions({
                 onClick={() => onChange("volume", option.label)}
                 className={`rounded-[10px] border px-3 py-3 text-center transition-colors ${
                   active
-                    ? "border-[#171310] bg-[#f8f4ef] text-[#171310] shadow-[0_0_0_1px_rgba(23,19,16,0.08)]"
-                    : "border-[#d9cfc3] bg-[#f6f2ee] text-[#5c554f]"
+                    ? "border-ink bg-surface-strong text-ink shadow-[0_0_0_1px_rgba(23,19,16,0.08)]"
+                    : "border-border bg-surface-stone text-ink-muted"
                 }`}
               >
                 <span className="block text-[13px] font-medium tracking-[-0.02em]">
                   {option.label}
                 </span>
-                <span className="mt-1 block text-[9px] font-medium uppercase tracking-[0.16em] text-[#877b72]">
+                <span className="mt-1 block text-[9px] font-medium uppercase tracking-[0.16em] text-ink-gold">
                   {option.price}
                 </span>
               </button>
@@ -59,13 +59,13 @@ export function ProductOptions({
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-3 rounded-[16px] border border-[#d9d0c5] bg-[#f4efe9] px-4 py-3">
+      <div className="flex items-center justify-between gap-3 rounded-[16px] border border-border-strong bg-surface-cream px-4 py-3">
         <div className="flex items-start">
           <div>
-            <p className="text-[16px] font-medium leading-[1.3] tracking-[-0.02em] text-[#171310]">
+            <p className="text-[16px] font-medium leading-[1.3] tracking-[-0.02em] text-ink">
               Complimentary Signature Gift Wrapping
             </p>
-            <p className="mt-1 text-[15px] leading-[1.5] text-[#5c514d]">
+            <p className="mt-1 text-[15px] leading-[1.5] text-ink-muted">
               Encased in linen paper box with custom wax seal stamp.
             </p>
           </div>
@@ -77,11 +77,11 @@ export function ProductOptions({
           aria-pressed={giftWrapEnabled}
           onClick={() => setGiftWrapEnabled((current) => !current)}
           className={`relative inline-flex h-8 w-16 items-center rounded-full border transition-colors ${
-            giftWrapEnabled ? "border-[#c4b298] bg-[#d4c3a0]" : "border-[#d2c8bc] bg-[#f2eee9]"
+            giftWrapEnabled ? "border-toggle-border-on bg-toggle-on" : "border-toggle-border-off bg-toggle-off"
           }`}
         >
           <span
-            className={`inline-block size-6 rounded-full bg-[#fffefc] shadow-[0_1px_3px_rgba(0,0,0,0.3)] transition-transform ${
+            className={`inline-block size-6 rounded-full bg-toggle-handle shadow-[0_1px_3px_rgba(0,0,0,0.3)] transition-transform ${
               giftWrapEnabled ? "translate-x-8" : "translate-x-1"
             }`}
           />

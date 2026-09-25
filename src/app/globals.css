@@ -1,15 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
-  --foreground: #18181b;
+  --background: #faf8f5;
+  --foreground: #1a1a1a;
+  --page: #faf8f5;
+  --surface: #f5f1ea;
+  --surface-warm: #f0ece7;
+  --surface-alt: #f7f2ed;
+  --surface-cream: #f5efe9;
+  --surface-soft: #fffdfb;
+  --surface-stone: #f6f2ee;
+  --surface-strong: #f8f4ef;
+  --panel: #ffffff;
+  --ink: #171310;
+  --ink-soft: #1a1a1a;
+  --ink-muted: #5a514b;
+  --ink-subtle: #605a54;
+  --ink-faint: #6d625d;
+  --ink-gold: #877b72;
+  --border: #d8cfc3;
+  --border-soft: #ebe6de;
+  --border-strong: #d9d0c5;
+  --accent: #5d8f74;
+  --gold: #c5a880;
+  --toggle-on: #d4c3a0;
+  --toggle-off: #f2eee9;
+  --toggle-handle: #fffefc;
+  --toggle-border-on: #c4b298;
+  --toggle-border-off: #d2c8bc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-warm: var(--surface-warm);
+  --color-surface-alt: var(--surface-alt);
+  --color-surface-cream: var(--surface-cream);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-stone: var(--surface-stone);
+  --color-surface-strong: var(--surface-strong);
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-ink-faint: var(--ink-faint);
+  --color-ink-gold: var(--ink-gold);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-gold: var(--gold);
+  --color-toggle-on: var(--toggle-on);
+  --color-toggle-off: var(--toggle-off);
+  --color-toggle-handle: var(--toggle-handle);
+  --color-toggle-border-on: var(--toggle-border-on);
+  --color-toggle-border-off: var(--toggle-border-off);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-instrument-serif);
 }
 
 body {

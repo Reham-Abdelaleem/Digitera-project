@@ -76,7 +76,7 @@ export function ProductDetailsPage({
   }
 
   return (
-    <section className="bg-[#f5f1ea] text-[#171310]">
+    <section className="bg-surface text-ink">
       <div className="mx-auto max-w-[1260px] px-4 pb-10 pt-5 sm:px-6 md:px-10 lg:px-20 lg:pb-12">
         <nav
           aria-label="Breadcrumb"
@@ -186,10 +186,10 @@ export function ProductDetailsPage({
 
       <div className="mx-auto max-w-[1260px] px-4 pb-16 sm:px-6 md:px-10 lg:px-20">
         <div className="pt-8">
-          <h2 className="text-center font-[family-name:var(--font-instrument-serif)] text-[42px] leading-[0.96] tracking-[-0.04em] text-[#171310]">
+          <h2 className="text-center font-display text-[42px] leading-[0.96] tracking-[-0.04em] text-ink">
             Olfactory Companions
           </h2>
-          <p className="mt-3 text-center text-[10px] font-medium uppercase tracking-[0.2em] text-[#6a625c]">
+          <p className="mt-3 text-center text-[10px] font-medium uppercase tracking-[0.2em] text-ink-faint">
             Fragrances of synonymous sophistication
           </p>
 
